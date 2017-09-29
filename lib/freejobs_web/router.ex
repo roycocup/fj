@@ -17,6 +17,13 @@ defmodule FreejobsWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    
+    resources "/admin", AdminController
+
+    resources "/user", UserController do
+      resources "/post", PostController  
+    end
+
   end
 
   # Other scopes may use custom stacks.

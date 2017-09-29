@@ -1,0 +1,22 @@
+<div class="row marketing">
+  
+  <div class="col-lg-6">
+    <div class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Created</th>
+            <th>Updated</th>
+        </tr>
+        <tr>
+            
+        </tr>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+      <button class="btn btn-primary">Create new</button>
+  </div>
+    
+</div>
