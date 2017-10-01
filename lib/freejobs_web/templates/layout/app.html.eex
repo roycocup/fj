@@ -16,8 +16,9 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li>Home</li>
-            <li>Post an ad</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="<%= post_path(@conn, :index) %>">See all ads</a></li>
+            <li><a href="<%= post_path(@conn, :new) %>">Post new ad</a></li>
           </ul>
         </nav>
         <span class="logo"></span>
