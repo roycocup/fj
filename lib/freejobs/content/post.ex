@@ -7,6 +7,7 @@ defmodule Freejobs.Content.Post do
   schema "posts" do
     field :body, :string
     field :title, :string
+    belongs_to :user, Accounts.User
 
     timestamps()
   end
