@@ -18,11 +18,11 @@ defmodule FreejobsWeb.Router do
 
     get "/", PageController, :index
     
-    resources "/admin", AdminController
+    resources "/admins", AdminController
 
-    resources "/user", UserController do
-      resources "/post", PostController  
-    end
+    resources "/users", UserController
+
+    resources "/posts", PostController  
 
   end
 

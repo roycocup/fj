@@ -1,22 +1,28 @@
-<div class="row marketing">
-  
-  <div class="col-lg-6">
-    <div class="table">
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Created</th>
-            <th>Updated</th>
-        </tr>
-        <tr>
-            
-        </tr>
-    </div>
-  </div>
+<h2>Listing Admins</h2>
 
-  <div class="col-lg-6">
-      <button class="btn btn-primary">Create new</button>
-  </div>
-    
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for admin <- @admins do %>
+    <tr>
+      <td><%= admin.name %></td>
+      <td><%= admin.email %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: admin_path(@conn, :show, admin), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: admin_path(@conn, :edit, admin), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: admin_path(@conn, :delete, admin), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Admin", to: admin_path(@conn, :new) %></span>

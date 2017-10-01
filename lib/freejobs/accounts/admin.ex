@@ -1,7 +1,7 @@
-defmodule Freejobs.Admins.User do
+defmodule Freejobs.Accounts.Admin do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Freejobs.Admins.User
+  alias Freejobs.Accounts.Admin
 
 
   schema "admins" do
@@ -12,8 +12,8 @@ defmodule Freejobs.Admins.User do
   end
 
   @doc false
-  def changeset(%User{} = user, attrs) do
-    user
+  def changeset(%Admin{} = admin, attrs) do
+    admin
     |> cast(attrs, [:name, :email])
     |> validate_required([:name, :email])
   end
