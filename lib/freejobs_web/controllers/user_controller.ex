@@ -38,7 +38,11 @@ defmodule FreejobsWeb.UserController do
 
   def update(conn, %{"id" => id, "user" => user_params}) do
     user = Accounts.get_user!(id)
-
+    
+    # password = Map.get(user_params, :password)
+    # hashed = Base.encode16(:crypto.hash(:md5, password))
+    # Map.put(user_params, :password, hashed)
+    
     case Accounts.update_user(user, user_params) do
       {:ok, user} ->
         conn
